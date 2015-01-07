@@ -1,17 +1,17 @@
 use 5.008;
 use strict;
 use warnings;
-
-                       
-my $github    = 'https://github.com/briandfoy/';
-my $main_file = 'lib/';
+           
+my $github    = 'https://github.com/briandfoy/business-isbn-data';
+my $main_file = 'lib/Business/ISBN/Data.pm';
 
 my %WriteMakefile = (
     'NAME'  	 	=> 'Business::ISBN::Data',
-    'VERSION_FROM' 	=> 'lib/Business/ISBN/Data.pm',
+	'ABSTRACT_FROM' => $main_file,
+    'VERSION_FROM' 	=> $main_file,
 	'LICENSE'       => 'perl',
 	'AUTHOR'        => 'brian d foy <bdfoy@cpan.org>',
-	'ABSTRACT_FROM' => $main_file;	
+	
     'PREREQ_PM'     => {
 		'Carp'                  => '0',
 		'File::Basename'        => '0',
@@ -31,9 +31,13 @@ my %WriteMakefile = (
 		resources => {
 			repository => {
 				type => 'git',
-				url  => 'git@github.com:briandfoy/business--isbn.git',
-				web  => 'https://github.com/briandfoy/business--isbn',
+				url  => "$github.git",
+				web  => $github,
 				},
+			bugtraker => {
+				web    => "$github/issues",
+				},
+			homepage => $github,
 			},
 		},
 
