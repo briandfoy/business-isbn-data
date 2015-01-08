@@ -2,11 +2,14 @@ use 5.008;
 use strict;
 use warnings;
            
+use File::Spec::Functions qw(catfile);
+
+my $module    = 'Business::ISBN::Data';
 my $github    = 'https://github.com/briandfoy/business-isbn-data';
-my $main_file = 'lib/Business/ISBN/Data.pm';
+my $main_file = catfile( 'lib', split /::/, "$module.pm" );
 
 my %WriteMakefile = (
-    'NAME'  	 	=> 'Business::ISBN::Data',
+    'NAME'  	 	=> $module,
 	'ABSTRACT_FROM' => $main_file,
     'VERSION_FROM' 	=> $main_file,
 	'LICENSE'       => 'perl',
