@@ -1,10 +1,12 @@
 use 5.008;
+
+package Business::ISBN::Data;
 use strict;
 use warnings;
            
 use File::Spec::Functions qw(catfile);
 
-my $module    = 'Business::ISBN::Data';
+my $module    = __PACKAGE__;
 my $github    = 'https://github.com/briandfoy/business-isbn-data';
 my $main_file = catfile( 'lib', split /::/, "$module.pm" );
 
@@ -22,7 +24,8 @@ my %WriteMakefile = (
 		},
 
 	'CONFIGURE_REQUIRES' => {
-		'ExtUtils::MakeMaker' => '6.64',
+		'ExtUtils::MakeMaker'   => '6.64',
+		'File::Spec::Functions' => '0',
 		},
 
 	'TEST_REQUIRES' => {
