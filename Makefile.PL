@@ -1,12 +1,10 @@
 use 5.008;
-
-package Business::ISBN::Data;
 use strict;
 use warnings;
            
 use File::Spec::Functions qw(catfile);
 
-my $module    = __PACKAGE__;
+my $module    = 'Business::ISBN::Data';
 my $github    = 'https://github.com/briandfoy/business-isbn-data';
 my $main_file = catfile( 'lib', split /::/, "$module.pm" );
 
@@ -17,12 +15,6 @@ my %WriteMakefile = (
 	'LICENSE'       => 'perl',
 	'AUTHOR'        => 'brian d foy <bdfoy@cpan.org>',
 	
-    'PREREQ_PM'     => {
-		'Carp'                  => '0',
-		'File::Basename'        => '0',
-		'File::Spec::Functions' => '0',
-		},
-
 	'CONFIGURE_REQUIRES' => {
 		'ExtUtils::MakeMaker'   => '6.64',
 		'File::Spec::Functions' => '0',
@@ -30,6 +22,15 @@ my %WriteMakefile = (
 
 	'TEST_REQUIRES' => {
 		'Test::More'          => '0.95',
+		},
+
+	'BUILD_REQUIRES' => {
+		},
+
+    'PREREQ_PM'     => {
+		'Carp'                  => '0',
+		'File::Basename'        => '0',
+		'File::Spec::Functions' => '0',
 		},
 
 	'META_MERGE' => {
@@ -60,7 +61,7 @@ sub do_it {
 		eval{ "$MM " . $WriteMakefile{'CONFIGURE_REQUIRES'}{'ExtUtils::MakeMaker'} }
 			//
 		"$MM 6.64";
-	eval "use $MM_version" || die "Could not load $MM_version: $@";
+	eval "use $MM_version; 1" or die "Could not load $MM_version: $@";
 	eval "use Test::Manifest 1.21" 
 		if -e File::Spec->catfile( qw(t test_manifest) );
 	WriteMakefile( %WriteMakefile );
