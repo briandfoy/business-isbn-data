@@ -1,10 +1,12 @@
 use 5.008;
+
+package Business::ISBN::Data;
 use strict;
 use warnings;
            
 use File::Spec::Functions qw(catfile);
 
-my $module    = 'Business::ISBN::Data';
+my $module    = __PACKAGE__;
 ( my $dist = $module ) =~ s/::/-/g;
 
 my $github    = 'https://github.com/briandfoy/business-isbn-data';
