@@ -50,7 +50,7 @@ my %WriteMakefile = (
 			},
 		},
 
-	clean => { FILES => 'Business-ISBN-Data* .DS_Store' },
+	clean => { FILES => "$dist-*" },
 	);
 
 sub arguments { \%WriteMakefile }
