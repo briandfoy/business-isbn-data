@@ -1,5 +1,6 @@
 Changes
 examples/README
+INSTALL.SKIP
 lib/Business/ISBN/Data.pm
 lib/Business/ISBN/RangeMessage.xml
 LICENSE
