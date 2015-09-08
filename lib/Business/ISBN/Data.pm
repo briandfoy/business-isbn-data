@@ -8,6 +8,8 @@ use File::Spec::Functions qw(catfile);
 
 $VERSION = '20140910.002';
 
+=encoding utf8
+
 =head1 NAME
 
 Business::ISBN::Data - data pack for Business::ISBN
