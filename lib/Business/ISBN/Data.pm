@@ -1,5 +1,6 @@
 package Business::ISBN::Data;
 use strict;
+use warnings;
 use vars qw($VERSION);
 
 use Carp qw(carp);
