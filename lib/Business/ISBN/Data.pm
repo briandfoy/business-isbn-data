@@ -377,7 +377,8 @@ $Business::ISBN::MAX_COUNTRY_CODE_LENGTH = length(
 	( sort { $a <=> $b } grep { ! /\A_/ } keys %Business::ISBN::country_data )[-1]
 	);
 
-package Business::ISBN;
+package # Hide from PAUSE
+	Business::ISBN;
 
 sub isbn_group_code_string_from_number {
 	return if $_[0] =~ /\A_/;
