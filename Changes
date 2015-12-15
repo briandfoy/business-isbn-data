@@ -1,5 +1,8 @@
 Revision history for Perl module 
 
+20140910.003 2015-12-15T12:25:58Z
+	* Hide the Business::ISBN namespace
+
 20140910.02 - 2014-09-22
 	* Look in the current directory for RangeMessage.xml if it's
 	not in other locations. This can help with various Perl app
