@@ -6,7 +6,7 @@ use Carp qw(carp);
 use File::Basename qw(dirname);
 use File::Spec::Functions qw(catfile);
 
-$VERSION = '20140910.002';
+$VERSION = '20140910.003';
 
 =encoding utf8
 
@@ -393,4 +393,5 @@ sub isbn_publisher_ranges_from_group_number {
 sub isbn_data_source {
 	return $Business::ISBN::country_data{ '_source' } || __FILE__
 	}
+
 1;
