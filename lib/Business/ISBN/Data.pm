@@ -65,9 +65,9 @@ directory to make it work with Perl app bundlers.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright © 2002-2015, brian d foy <bdfoy@cpan.org>. All rights reserved.
+Copyright © 2002-2018, brian d foy <bdfoy@cpan.org>. All rights reserved.
 
-You may redistribute this under the same terms as Perl itself.
+You may redistribute this under the terms of the Artistic License 2.0.
 
 =cut
 
