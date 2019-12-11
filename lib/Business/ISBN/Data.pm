@@ -65,6 +65,8 @@ directory to make it work with Perl app bundlers.
 
 Josef Moravec C<< <josef.moravec@gmail.com> >> updated the data in January 2019.
 
+Peter Williams fixed a serious issue with ISBN-13 (GitHub #5)
+
 =head1 COPYRIGHT AND LICENSE
 
 Copyright © 2002-2019, brian d foy <bdfoy@cpan.org>. All rights reserved.
