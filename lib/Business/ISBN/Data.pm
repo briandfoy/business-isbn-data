@@ -67,7 +67,7 @@ Josef Moravec C<< <josef.moravec@gmail.com> >> updated the data in January 2019.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright © 2002-2018, brian d foy <bdfoy@cpan.org>. All rights reserved.
+Copyright © 2002-2019, brian d foy <bdfoy@cpan.org>. All rights reserved.
 
 You may redistribute this under the terms of the Artistic License 2.0.
 
