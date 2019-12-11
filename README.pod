@@ -47,8 +47,15 @@ there), or look at the test files in I<t/>.
 
 =head2 Installation
 
-You can install this module with a CPAN client, which will resolve
-and install the dependencies:
+Usually you don't need to install this module on its own because
+L<Business::ISBN> will do it for you. You should always try this
+first:
+
+	% cpan Business::ISBN
+
+However, this module might update with the latest data even though
+L<Business::ISBN> did not change. In that case, you can install this
+directly:
 
 	% cpan Business::ISBN::Data
 	% cpanm Business::ISBN::Data
