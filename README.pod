@@ -14,6 +14,12 @@
 
 =head1 The Business::ISBN::Data module
 
+B<Version 20191107 changed the internal data structure. You need
+Business::ISBN 3.005 to use this new data structure. Installing
+the right Business::ISBN with cpan should update this for you. However,
+installing this module by itself will not update Business::ISBN for
+you>.
+
 This is the I<README> for the L<Business::ISBN::Data> Perl module. You're probably
 looking at this because you don't know where else to find what you're
 looking for. Read this once and you might never have to read one again
