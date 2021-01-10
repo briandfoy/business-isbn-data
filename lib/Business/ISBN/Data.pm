@@ -69,7 +69,7 @@ Peter Williams fixed a serious issue with ISBN-13 (GitHub #5)
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright © 2002-2019, brian d foy <bdfoy@cpan.org>. All rights reserved.
+Copyright © 2002-2021, brian d foy <bdfoy@cpan.org>. All rights reserved.
 
 You may redistribute this under the terms of the Artistic License 2.0.
 
