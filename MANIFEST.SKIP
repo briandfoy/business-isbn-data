@@ -67,6 +67,6 @@ hacks/
 (?:MANIFEST|Changes)\s\d+   # Stupid iCloud artifacts
 \bMANIFEST\s\d
 \bChanges\s\d
-
+\.icloud$
 \A\.github\b
 
