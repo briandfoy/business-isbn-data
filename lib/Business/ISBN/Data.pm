@@ -384,6 +384,7 @@ sub _parse_range_message {
 		my( $isbn_prefix, $prefix ) = $group =~ m|<Prefix>(97[89]-)?([0-9]+?)</Prefix>|;
 		$isbn_prefix = $isbn_prefix eq '979-' ? "979" : "978";
 		my( $agency ) = $group =~ m|<Agency>(.*?)</Agency>|;
+		$agency =~ s/^\s+|\s+$//g;  # 'Croatia     ' ???
 		my @rules =
 			map {
 				my( $range ) = m|<Range>(.*?)</Range>|;
