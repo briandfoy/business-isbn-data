@@ -45,9 +45,13 @@ C<$Business::ISBN::country_data{_source}>.
 
 =head1 SOURCE AVAILABILITY
 
-This module lives in the Github repository with Business::ISBN:
+This module lives in a Github repository:
 
-	git://github.com/briandfoy/business--isbn.git
+	https://github.com/briandfoy/business-isbn-data.git
+
+You are probably also interested in the module that uses it:
+
+	https://github.com/briandfoy/business-isbn.git
 
 If you have something to add, create a fork on Github and send a
 pull request.
