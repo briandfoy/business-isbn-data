@@ -1,12 +1,11 @@
 package Business::ISBN::Data;
 use strict;
-use vars qw($VERSION);
 
 use Carp qw(carp);
 use File::Basename qw(dirname);
 use File::Spec::Functions qw(catfile);
 
-$VERSION = '20191107';
+our $VERSION = '20210112.001';
 
 =encoding utf8
 
