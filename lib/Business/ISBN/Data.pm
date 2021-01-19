@@ -20,7 +20,7 @@ see L<Business::ISBN>
 
 =head1 DESCRIPTION
 
-You don't need to load this module yourself in most cases. C<Business::ISBN>
+You don't need to load this module yourself in most cases. L<Business::ISBN>
 will load it when it loads.
 
 These data are generated from the F<RangeMessage.xml> file provided by
