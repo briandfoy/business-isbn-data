@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-use Test::More 0.95;
+use Test::More;
 
 use File::Spec::Functions qw(catfile);
 
