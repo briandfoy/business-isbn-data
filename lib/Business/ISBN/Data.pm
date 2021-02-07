@@ -351,6 +351,7 @@ sub _get_data {
 	if( defined $ENV{ISBN_RANGE_MESSAGE} and ! -e $ENV{ISBN_RANGE_MESSAGE} ) {
 		carp "ISBN_RANGE_MESSAGE is set to [$ENV{ISBN_RANGE_MESSAGE}] but that file does not exist!\nTrying to use the default locations\n";
 		}
+
 	my $file = 'RangeMessage.xml';
 	no warnings 'uninitialized';
 	my @candidates = grep { -e } (
