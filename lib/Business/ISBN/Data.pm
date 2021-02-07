@@ -359,7 +359,9 @@ sub _get_data {
 		$file,                                 # current directory
 		);
 
-	my $hash = _parse_range_message( $candidates[0] );
+	my $hash;
+
+	$hash = _parse_range_message( $candidates[0] ) if @candidates;
 
 	if( defined $hash ) { return %$hash   }
 	else                { _default_data() }
