@@ -49,7 +49,22 @@ subtest 'env_range_message' => sub {
 		}
 	};
 
-subtest 'current_data' => sub {
+subtest 'missing_range_message' => sub {
+	# Test with RangeMessage.xml set in ISBN_RANGE_MESSAGE
+
+	my $file = catfile( qw(blib lib Business ISBN RangeMessage.xml) );
+	my $out_of_the_way = $file . '.hidden';
+
+	rename $file => $out_of_the_way;
+
+	ok( ! -e $file, 'RangeMessage.xml is out of the way' );
+	local %Business::ISBN::country_data = Business::ISBN::Data::_get_data();
+
+	like( $Business::ISBN::country_data{_source}, qr/\bData\.pm/ );
+
+	rename $out_of_the_way => $file;
+	};
+
 subtest 'default_data' => sub {
 	# Test with default data
 	local %Business::ISBN::country_data = Business::ISBN::Data::_default_data();
