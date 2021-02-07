@@ -60,7 +60,7 @@ subtest 'missing_range_message' => sub {
 	ok( ! -e $file, 'RangeMessage.xml is out of the way' );
 	local %Business::ISBN::country_data = Business::ISBN::Data::_get_data();
 
-	like( $Business::ISBN::country_data{_source}, qr/\bData\.pm/ );
+	like( $Business::ISBN::country_data{_source}, qr/\bData\.pm/, 'Data source is the default data structure' );
 
 	rename $out_of_the_way => $file;
 	};
