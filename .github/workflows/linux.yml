@@ -72,3 +72,11 @@ jobs:
               run: |
                 perl Makefile.PL
                 make disttest
+            - name: Test without RangeMessage.xml
+              run: |
+                perl Makefile.PL
+                make distdir
+                cd Business-*
+                perl Makefile.PL
+                rm blib/lib/Business/ISBN/*.xml
+                prove -Iblib/lib t/various-isbn.t
