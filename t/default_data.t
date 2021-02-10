@@ -29,6 +29,9 @@ SKIP: {
 			}
 		};
 
+	local %Business::ISBN::country_data = Business::ISBN::Data::_get_data();
+	like( $Business::ISBN::country_data{_source}, qr/\bData\.pm/, 'Data source is the default data structure' );
+
 	subtest 'check_isbns' => sub {
 		foreach my $isbn ( @{ $_[0] } ) {
 			my $i = Business::ISBN->new( $isbn );
