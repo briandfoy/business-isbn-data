@@ -25,7 +25,8 @@ You don't need to load this module yourself in most cases. L<Business::ISBN>
 will load it when it loads.
 
 These data are generated from the F<RangeMessage.xml> file provided by
-the ISBN Agency. You can retrieve this yourself at L<https://www.isbn-international.org/range_file_generation>.
+the ISBN Agency. The distributed version matches the date in the version
+for this module. You can retrieve this yourself at L<https://www.isbn-international.org/range_file_generation>.
 This file is included as part of the distribution and should be installed
 at F<~lib/Business/ISBN/Data/RangeMessage.xml>.
 
@@ -37,7 +38,7 @@ an update to this module.
 
 If the default F<RangeMessage.xml> or your alternate one is not available,
 the module falls back to data included in F<Data.pm>. However, that data
-is likely to be older data. If it does not find that file, it looks
+are likely to be older. If it does not find that file, it looks
 for F<RangeMessage.xml> in the current directory.
 
 The data are in C<%Business::ISBN::country_data> (although the "country"
@@ -51,22 +52,11 @@ as F<Data.pm>. The same data exist as the default data in the code, so
 you don't need to pass along the distributed F<RangeMessage.xml>.
 However, you can include a newer F<RangeMessage.xml>.
 
-With PAR, you can add extra files to the archive with C<-a>. This puts
-your F<RangeMessage.xml> at the top-level of the archive:
+With PAR, you can add extra files to the archive with C<-a>. Put the
+new file somewhere the module will find it (or use C<ISBN_RANGE_MESSAGE>
+to lead it there):
 
 	pp ... -a '..../RangeMessage.xml;RangeMessage.xml'
-
-Inside the program, tell the module where to find the module with
-C<ISBN_RANGE_MESSAGE>, perhaps like this. You need to do this before
-you load L<Business::ISBN>:
-
-	BEGIN {
-		if( $ENV{PAR_TEMP} ) {
-			$ENV{ISBN_RANGE_MESSAGE} = '/RangeMessage.xml';
-			}
-		}
-
-	use Business::ISBN;
 
 =head1 SOURCE AVAILABILITY
 
