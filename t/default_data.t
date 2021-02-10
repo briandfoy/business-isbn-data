@@ -15,20 +15,28 @@ use Test::More;
 use File::Spec::Functions qw(catfile);
 
 SKIP: {
-	skip "Need Business::ISBN to run this test", 2 unless use_ok( 'Business::ISBN' );
+	skip "Need Business::ISBN to run this test", 2 unless eval { require Business::ISBN };
+
+	my $file = catfile( qw(blib lib Business ISBN RangeMessage.xml) );
+	my $out_of_the_way = $file . '.hidden';
+
+	ok( rename($file => $out_of_the_way), 'Renamed file' );
+
 	subtest 'compile' => sub {
 		my @modules = qw( Business::ISBN::Data );
 		foreach my $module ( @modules ) {
-			BAIL_OUT( "Could not load $module" ) unless use_ok( $module );
+			BAIL_OUT( "Could not load $module" ) unless eval{ use_ok( $module ) };
 			}
 		};
 
 	subtest 'check_isbns' => sub {
-		foreach my $isbn ( @isbns_from_issues ) {
+		foreach my $isbn ( @{ $_[0] } ) {
 			my $i = Business::ISBN->new( $isbn );
 			ok( $i->is_valid, "$isbn is valid" );
 			}
 		};
+
+	rename $out_of_the_way => $file;
 	}
 
 done_testing();
