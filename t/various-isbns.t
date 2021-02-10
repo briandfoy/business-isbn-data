@@ -14,18 +14,21 @@ use Test::More;
 
 use File::Spec::Functions qw(catfile);
 
-subtest 'compile' => sub {
-	my @modules = qw( Business::ISBN Business::ISBN::Data );
-	foreach my $module ( @modules ) {
-		BAIL_OUT( "Could not load $module" ) unless use_ok( $module );
-		}
-	};
+SKIP: {
+	skip "Need Business::ISBN to run this test", 2 unless use_ok( 'Business::ISBN' );
+	subtest 'compile' => sub {
+		my @modules = qw( Business::ISBN::Data );
+		foreach my $module ( @modules ) {
+			BAIL_OUT( "Could not load $module" ) unless use_ok( $module );
+			}
+		};
 
-subtest 'check_isbns' => sub {
-	foreach my $isbn ( @isbns_from_issues ) {
-		my $i = Business::ISBN->new( $isbn );
-		ok( $i->is_valid, "$isbn is valid" );
-		}
-	};
+	subtest 'check_isbns' => sub {
+		foreach my $isbn ( @isbns_from_issues ) {
+			my $i = Business::ISBN->new( $isbn );
+			ok( $i->is_valid, "$isbn is valid" );
+			}
+		};
+	}
 
 done_testing();
