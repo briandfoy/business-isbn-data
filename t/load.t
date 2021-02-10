@@ -1,4 +1,4 @@
-#!perl
+#!/usr/bin/perl
 
 my @modules = qw(Business::ISBN::Data);
 
