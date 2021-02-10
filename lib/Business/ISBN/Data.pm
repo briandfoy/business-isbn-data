@@ -44,6 +44,30 @@ The data are in C<%Business::ISBN::country_data> (although the "country"
 part is historical). If you want to see where the data are from, check
 C<$Business::ISBN::country_data{_source}>.
 
+=head2 Packaging this module
+
+The included F<RangeMessage.xml> is in under F<lib/> at the same level
+as F<Data.pm>. The same data exist as the default data in the code, so
+you don't need to pass along the distributed F<RangeMessage.xml>.
+However, you can include a newer F<RangeMessage.xml>.
+
+With PAR, you can add extra files to the archive with C<-a>. This puts
+your F<RangeMessage.xml> at the top-level of the archive:
+
+	pp ... -a '..../RangeMessage.xml;RangeMessage.xml'
+
+Inside the program, tell the module where to find the module with
+C<ISBN_RANGE_MESSAGE>, perhaps like this. You need to do this before
+you load L<Business::ISBN>:
+
+	BEGIN {
+		if( $ENV{PAR_TEMP} ) {
+			$ENV{ISBN_RANGE_MESSAGE} = '/RangeMessage.xml';
+			}
+		}
+
+	use Business::ISBN;
+
 =head1 SOURCE AVAILABILITY
 
 This module lives in a Github repository:
