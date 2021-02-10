@@ -73,6 +73,7 @@ jobs:
                 make disttest
             - name: Test without RangeMessage.xml
               run: |
+                cpan -M https://www.cpan.org -T Business::ISBN
                 perl Makefile.PL
                 make distdir
                 cd Business-*
