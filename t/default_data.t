@@ -15,7 +15,13 @@ use Test::More;
 use File::Spec::Functions qw(catfile);
 
 SKIP: {
-	skip "Need Business::ISBN to run this test", 2 unless eval { require Business::ISBN };
+	my $tests = @isbns_from_issues + 3;
+	skip "Need Business::ISBN 3 to run this test", $tests unless eval {
+		require Business::ISBN;
+		Business::ISBN->VERSION(3);
+		};
+
+	diag( "Business::ISBN is " . Business::ISBN->VERSION );
 
 	my $file = catfile( qw(blib lib Business ISBN RangeMessage.xml) );
 	my $out_of_the_way = $file . '.hidden';
@@ -35,7 +41,8 @@ SKIP: {
 	subtest 'check_isbns' => sub {
 		foreach my $isbn ( @isbns_from_issues ) {
 			my $i = Business::ISBN->new( $isbn );
-			ok( $i->is_valid, "$isbn is valid" );
+			ok( $i->is_valid, "<$isbn> is valid" ) or
+				diag( "<$isbn> error is <" . $i->error_text . ">" );
 			}
 		};
 
