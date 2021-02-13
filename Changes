@@ -1,5 +1,10 @@
 Revision history for Perl module Business::ISBN::Data
 
+20210112.005 2021-02-13T05:23:58Z
+	* Fix the default data test. It should only run when you have 
+	Business::ISBN already, and it shouldn't do stupid things like
+	using an array that I didn't put anything in.
+
 20210112.004 2021-02-10T04:29:32Z
 	* Test the default data.
 	* Add a note about packaging RangeMessage.xml (adapted from gwyn17)
