@@ -58,6 +58,21 @@ to lead it there):
 
 	pp ... -a '..../RangeMessage.xml;RangeMessage.xml'
 
+If you put the F<RangeMessage.xml> in the current working directory of
+the application, the module should find it.
+
+=head2 Updating the default data
+
+In the repo, find the F<examples/make_default_data.pl> program. Run
+that against the latest F<RangeMessage.xml>:
+
+	% perl -Ilib examples/make_default_data.pl RangeMessage.xml
+
+That produces the code you need to replace in the module. Check that
+that data aren't weird: sometimes the group names have errors or
+oddities. The program handles escaping single quotes and trimming
+white space.
+
 =head1 SOURCE AVAILABILITY
 
 This module lives in a Github repository:
