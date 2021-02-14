@@ -12,6 +12,7 @@ my @isbns_from_issues = qw(
 
 use Test::More;
 
+use Data::Dumper;
 use File::Spec::Functions qw(catfile);
 
 SKIP: {
@@ -41,8 +42,10 @@ SKIP: {
 	subtest 'check_isbns' => sub {
 		foreach my $isbn ( @isbns_from_issues ) {
 			my $i = Business::ISBN->new( $isbn );
-			ok( $i->is_valid, "<$isbn> is valid" ) or
+			ok( $i->is_valid, "<$isbn> is valid" ) or do {
 				diag( "<$isbn> error is <" . $i->error_text . ">" );
+				diag( Dumper( \%Business::ISBN::country_data ) );
+				};
 			}
 		};
 
