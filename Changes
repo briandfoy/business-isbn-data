@@ -1,5 +1,8 @@
 Revision history for Perl module Business::ISBN::Data
 
+20210112.005_02 2021-02-14T05:07:05Z
+	* Try harder to see what's going on in CPAN Testers
+
 20210112.005_01 2021-02-13T12:40:28Z
 	* Try harder to figure out these test failures
 
