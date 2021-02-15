@@ -17,9 +17,9 @@ use File::Spec::Functions qw(catfile);
 
 SKIP: {
 	my $tests = @isbns_from_issues + 3;
-	skip "Need Business::ISBN 3 to run this test", $tests unless eval {
+	skip "Need Business::ISBN 3.006 to run this test", $tests unless eval {
 		require Business::ISBN;
-		Business::ISBN->VERSION(3);
+		Business::ISBN->VERSION('3.006');
 		};
 
 	diag( "Business::ISBN is " . Business::ISBN->VERSION );
@@ -42,10 +42,7 @@ SKIP: {
 	subtest 'check_isbns' => sub {
 		foreach my $isbn ( @isbns_from_issues ) {
 			my $i = Business::ISBN->new( $isbn );
-			ok( $i->is_valid, "<$isbn> is valid" ) or do {
-				diag( "<$isbn> error is <" . $i->error_text . ">" );
-				diag( Dumper( \%Business::ISBN::country_data ) );
-				};
+			ok( $i->is_valid, "<$isbn> is valid" );
 			}
 		};
 
