@@ -1,5 +1,11 @@
 Revision history for Perl module Business::ISBN::Data
 
+20210112.005_03 2021-02-15T17:43:08Z
+	* I think the CPAN Tester failures are using older versions of
+	Business::ISBN (older than 3.005 all seem to fail). I assumed they
+	started fresh, but I guess not. Require a recent version in the
+	default_data test.
+
 20210112.005_02 2021-02-14T05:07:05Z
 	* Try harder to see what's going on in CPAN Testers
 
