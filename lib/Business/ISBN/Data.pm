@@ -111,7 +111,7 @@ You may redistribute this under the terms of the Artistic License 2.0.
 
 sub _default_data {
 	(
-	_data_date => '20120112',
+	_data_date => '20210112',
 	_serial    => '0c5e7d67-d086-48c1-80f9-55319988b0c0',
 	_source    => __FILE__,
 	978 => {
