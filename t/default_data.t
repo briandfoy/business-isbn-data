@@ -19,6 +19,8 @@ SKIP: {
 	my $tests = @isbns_from_issues + 3;
 	skip "Need Business::ISBN 3.006 to run this test", $tests unless eval {
 		require Business::ISBN;
+		# 3.005 fixed a major problem with 979 numbers and the data
+		# structure changed.
 		Business::ISBN->VERSION('3.006');
 		};
 

@@ -22,7 +22,9 @@ see L<Business::ISBN>
 =head1 DESCRIPTION
 
 You don't need to load this module yourself in most cases. L<Business::ISBN>
-will load it when it loads.
+will load it when it loads. You must use L<Business::ISBN> 3.005 or later
+because the data structure changed slightly to fix a bug with ISBN13
+prefixes.
 
 These data are generated from the F<RangeMessage.xml> file provided by
 the ISBN Agency. The distributed version matches the date in the version
@@ -99,7 +101,8 @@ directory to make it work with Perl app bundlers.
 
 Josef Moravec C<< <josef.moravec@gmail.com> >> updated the data in January 2019.
 
-Peter Williams fixed a serious issue with ISBN-13 (GitHub #5)
+Peter Williams fixed a serious issue with ISBN-13 (GitHub #5). You must
+use Business::ISBN 3.005 or later because the data structure changed.
 
 =head1 COPYRIGHT AND LICENSE
 
