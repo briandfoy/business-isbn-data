@@ -113,6 +113,7 @@ You may redistribute this under the terms of the Artistic License 2.0.
 =cut
 
 sub _default_data {
+# BEGIN REPLACE
 	(
 	_data_date => '20230316',
 	_serial    => 'eddf3c26-9f84-4a73-a629-312f4266dc6a',
@@ -388,6 +389,7 @@ sub _default_data {
 		12    => [ 'Italy' => [ '200' => '299', '5450' => '5999', '80000' => '84999'] ],
 	},
 	);
+# END REPLACE
 	}
 
 sub _get_data {
