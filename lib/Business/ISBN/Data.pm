@@ -7,7 +7,7 @@ use Carp                  qw(carp);
 use File::Basename        qw(dirname);
 use File::Spec::Functions qw(catfile);
 
-our $VERSION = '202300316.001';
+our $VERSION = '20230316.001';
 
 =encoding utf8
 
