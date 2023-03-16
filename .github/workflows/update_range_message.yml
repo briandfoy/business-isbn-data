@@ -1,0 +1,25 @@
+name: Update RangeMessage.xml
+on:
+    schedule:
+        - cron: "37 3 * * *"
+    workflow_dispatch:
+jobs:
+    update:
+        runs-on: ubuntu-latest
+        env:
+        steps:
+            - uses: actions/checkout@v3
+            - name: setup git config
+              run: |
+                git config --global user.name "GitHub Actions Bot"
+                git config --global user.email "<>"
+            - name: Fetch RangeMessage.xml
+              run: |
+                curl https://www.isbn-international.org/export_rangemessage.xml > lib/Business/ISBN/RangeMessage.xml
+                perl -Ilib examples/make_default_data.pl
+            - name: Commit RangeMessage.xml
+              continue-on-error: true
+              run: |
+                git add lib/Business/ISBN/RangeMessage.xml lib/Business/ISBN/Data.pm
+                git commit -m "Latest RangeMessage.xml" lib/Business/ISBN/RangeMessage.xml lib/Business/ISBN/Data.pm
+                git push origin master
