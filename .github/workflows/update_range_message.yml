@@ -4,21 +4,45 @@ on:
         - cron: "37 3 * * *"
     workflow_dispatch:
 jobs:
-    update:
+    update-ranges:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
+            - name: setup packages
+              run: |
+                sudo apt -y install libxml2-utils
             - name: setup git config
               run: |
                 git config --global user.name "GitHub Actions Bot"
                 git config --global user.email "<>"
             - name: Fetch RangeMessage.xml
+              id: fetch
               run: |
-                curl https://www.isbn-international.org/export_rangemessage.xml > lib/Business/ISBN/RangeMessage.xml
-                perl -Ilib examples/make_default_data.pl
-            - name: Commit RangeMessage.xml
+                curl https://www.isbn-international.org/export_rangemessage.xml > lib/Business/ISBN/RangeMessage.xml.new
+            - name: Check new RangeMessage.xml
+              id: fetch
+              run: |
+                xmllint lib/Business/ISBN/RangeMessage.xml.new
+            - name: Check if RangeMessage is updated
+              id: compare
               continue-on-error: true
               run: |
+                perl util/range_messages_differ.pl lib/Business/ISBN/RangeMessage.xml lib/Business/ISBN/RangeMessage.xml.new
+                echo "RANGE_MESSAGES_DIFFER=$?" >> $GITHUB_ENV
+            - name: Update module data
+              id: update
+              if: ${{ env.RANGE_MESSAGES_DIFFER == 1 }}
+              run: |
+                mv lib/Business/ISBN/RangeMessage.xml.new lib/Business/ISBN/RangeMessage.xml
+                perl -Ilib examples/make_default_data.pl
+                perl -c lib/Business/ISBN/Data.pm
+                echo "UPDATE_FAILED=$?" >> $GITHUB_ENV
+            - name: Commit RangeMessage.xml
+              id: commit
+              if: ${{ env.UPDATE_FAILED == 0 }}
+              continue-on-error: true
+              run: |
+                git diff --quiet HEAD
                 git add lib/Business/ISBN/RangeMessage.xml lib/Business/ISBN/Data.pm
                 git commit -m "Latest RangeMessage.xml" lib/Business/ISBN/RangeMessage.xml lib/Business/ISBN/Data.pm
                 git push origin master
