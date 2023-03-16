@@ -35,7 +35,4 @@ pm_to_blib
 Changes*[123456789]
 MANIFEST*[123456789]
 *.icloud
-
-MANIFEST*[123456789]
-Changes*[123456789]
-
+lib/Business/ISBN/Data.pm.tmp
