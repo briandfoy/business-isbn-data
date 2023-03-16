@@ -22,7 +22,7 @@ jobs:
             - name: Check new RangeMessage.xml
               id: check
               run: |
-                xmllint lib/Business/ISBN/RangeMessage.xml.new
+                xmllint lib/Business/ISBN/RangeMessage.xml.new > /dev/null
             - name: Check if RangeMessage is updated
               id: compare
               continue-on-error: true
