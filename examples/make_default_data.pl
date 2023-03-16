@@ -5,20 +5,23 @@ use open qw(:std :utf8);
 use lib qw(lib);
 use Business::ISBN::Data;
 
-my $file = $ARGV[0];
+my $file = $ARGV[0] // 'lib/Business/ISBN/RangeMessage.xml';
 
 =encoding utf8
 
 =head1 NAME
 
-make_default_data.pl
+make_default_data.pl - digest the latest RangeMessage.xml into default data in the module
 
 =head1 SYNOPSIS
 
-	% curl https://www.isbn-international.org/?q=download_range/15821 > RangeMessage.xml
-	% perl make_default_data.pl RangeMessage.xml
+	% curl https://www.isbn-international.org/export_rangemessage.xml > RangeMessage.xml
+	% perl examples/make_default_data.pl RangeMessage.xml
 
-	# cut and paste result into lib/Business/ISBN/Data.pm
+Without an argument, it assumes the file is lib/Business/ISBN/RangeMessage.xml
+
+	% curl https://www.isbn-international.org/export_rangemessage.xml > lib/Business/ISBN/RangeMessage.xml
+	% perl examples/make_default_data.pl
 
 =head1 DESCRIPTION
 
@@ -62,7 +65,7 @@ Peter Williams fixed a serious issue with ISBN-13 (GitHub #5)
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright © 2002-2021, brian d foy <bdfoy@cpan.org>. All rights reserved.
+Copyright © 2002-2023, brian d foy <bdfoy@cpan.org>. All rights reserved.
 
 You may redistribute this under the terms of the Artistic License 2.0.
 
@@ -102,14 +105,38 @@ foreach my $k ( qw(978 979) ) {
 	$string =~ s/%%$k%%/$s/;
 	}
 
+my $PM_FILE = 'lib/Business/ISBN/Data.pm';
+my $TEMP_FILE = 'lib/Business/ISBN/Data.pm.tmp';
 
-say $string;
+open my $in_fh, '<:encoding(UTF-8)', $PM_FILE
+	or die "Could not open $PM_FILE: $!\n";
+open my $out_fh, '>:encoding(UTF-8)', $TEMP_FILE
+	or die "Could not open $TEMP_FILE: $!\n";
 
+while(<$in_fh>) {
+	state $in_replace = 0;
+	if( /\A# BEGIN REPLACE/ ) {
+		$in_replace = 1;
+		print {$out_fh} $_;
+		next;
+		}
+	elsif( /\A# END REPLACE/ ) {
+		$in_replace = 0;
+		$string =~ s/\s*\z/\n/;
+		print {$out_fh} $string;
+		print {$out_fh} $_;
+		next;
+		}
+	elsif( $in_replace ) {
+		next;
+		}
+	elsif( ! $in_replace ) {
+		print {$out_fh} $_;
+		next;
+		}
+	}
 
-__END__
+close($in_fh);
+close($out_fh);
 
-		     _date => Tue, 12 Jan 2021 10:43:54 GMT,
-		   _serial => 0c5e7d67-d086-48c1-80f9-55319988b0c0,
-		   _source => lib/Business/ISBN/RangeMessage.xml,
-	(
-
+rename $TEMP_FILE => $PM_FILE or die "Could not replace $PM_FILE: $!\n";
