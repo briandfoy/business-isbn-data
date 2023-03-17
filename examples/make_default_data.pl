@@ -39,11 +39,11 @@ gets you back to that for the release.
 
 This module lives in a Github repository:
 
-	https://github.com/briandfoy/business-isbn-data.git
+	https://github.com/briandfoy/business-isbn-data
 
 You are probably also interested in the module that uses it:
 
-	https://github.com/briandfoy/business-isbn.git
+	https://github.com/briandfoy/business-isbn
 
 If you have something to add, create a fork on Github and send a
 pull request.
