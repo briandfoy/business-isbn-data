@@ -77,6 +77,38 @@ do { warn "File <$file> does not exist\n"; exit(2) } unless -e $file;
 
 my $data = Business::ISBN::Data::_parse_range_message( $file );
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#
+#
+# Thu, 16 Mar 2023 20:59:31 GMT
+my( $day, $mon, $year ) = $data->{_date} =~ m/
+	# Thu, 16 Mar 2023 20:59:31 GMT
+	\A
+	\S+?
+	, \s+
+	(?<day>  \d+    ) \s
+	(?<mon>  [a-z]+ ) \s
+	(?<year> \d+    )
+	/x;
+
+my $new_version_date = sprintf '%4d%02d%02d', @+{qw(year mon day)};
+my $current_date = Business::ISBN::Data->VERSION;
+my( $major, $minor ) = split /\./, $current_date;
+
+my $new_minor = do {
+	if( $new_version_date > $major ) { 1 }
+	elsif( $new_version_date == $major ) { $minor + 1 }
+	else {
+		die "New date ($new_version_date) is older than current version ($current_date)\n";
+		}
+	};
+
+my $new_version = sprintf '%s.%03d', $new_version_date, $new_minor;
+say "CURRENT VERSION: $current_date NEW VERSION: $new_version";
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#
+#
 my $string = "\t(\n";
 
 foreach my $key ( sort grep /^_/, keys %$data ) {
@@ -105,6 +137,9 @@ foreach my $k ( qw(978 979) ) {
 	$string =~ s/%%$k%%/$s/;
 	}
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#
+#
 my $PM_FILE = 'lib/Business/ISBN/Data.pm';
 my $TEMP_FILE = 'lib/Business/ISBN/Data.pm.tmp';
 
@@ -115,7 +150,11 @@ open my $out_fh, '>:encoding(UTF-8)', $TEMP_FILE
 
 while(<$in_fh>) {
 	state $in_replace = 0;
-	if( /\A# BEGIN REPLACE/ ) {
+	if( s/\$VERSION = \K'\d+\.\d+'/'$new_version'/ ) {
+		print {$out_fh} $_;
+		next;
+		}
+	elsif( /\A# BEGIN REPLACE/ ) {
 		$in_replace = 1;
 		print {$out_fh} $_;
 		next;
