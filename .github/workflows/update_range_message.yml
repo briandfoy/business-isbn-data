@@ -4,7 +4,7 @@ on:
         - cron: "37 3 * * *"
     workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
   issues: write
 jobs:
     update-ranges:
