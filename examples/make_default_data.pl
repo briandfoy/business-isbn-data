@@ -81,6 +81,7 @@ my $data = Business::ISBN::Data::_parse_range_message( $file );
 #
 #
 # Thu, 16 Mar 2023 20:59:31 GMT
+say "DATE: $data->{_date}";
 my( $day, $mon, $year ) = $data->{_date} =~ m/
 	# Thu, 16 Mar 2023 20:59:31 GMT
 	\A
@@ -89,7 +90,7 @@ my( $day, $mon, $year ) = $data->{_date} =~ m/
 	(?<day>  \d+    ) \s
 	(?<mon>  [a-z]+ ) \s
 	(?<year> \d+    )
-	/x;
+	/ix;
 
 my $new_version_date = sprintf '%4d%02d%02d', @+{qw(year mon day)};
 my $current_date = Business::ISBN::Data->VERSION;
