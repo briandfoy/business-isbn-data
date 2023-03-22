@@ -91,8 +91,12 @@ my( $day, $mon, $year ) = $data->{_date} =~ m/
 	(?<mon>  [a-z]+ ) \s
 	(?<year> \d+    )
 	/ix;
+my %months = map  { state $n = 1; $_ => $n++ }
+	qw(Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec);
+my( $year, $day ) = @+{qw(year day)};
+my( $month ) = $months{ $+{mon} };
 
-my $new_version_date = sprintf '%4d%02d%02d', @+{qw(year mon day)};
+my $new_version_date = sprintf '%4d%02d%02d', $year, $month, $day;
 my $current_date = Business::ISBN::Data->VERSION;
 my( $major, $minor ) = split /\./, $current_date;
 
