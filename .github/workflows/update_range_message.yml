@@ -43,8 +43,8 @@ jobs:
               if: ${{ env.RANGE_MESSAGES_SAME == 0 }}
               run: |
                 mv lib/Business/ISBN/RangeMessage.xml.new lib/Business/ISBN/RangeMessage.xml
-                perl -0777 -ne 'm/^our \x24VERSION\s+=\s+\x27(.+?)\x27/m and print qq(NEW_VERSION=$1)' lib/Business/ISBN/Data.pm >> $GITHUB_ENV
                 perl -Ilib examples/make_default_data.pl
+                perl -0777 -ne 'm/^our \x24VERSION\s+=\s+\x27(.+?)\x27/m and print qq(NEW_VERSION=$1)' lib/Business/ISBN/Data.pm >> $GITHUB_ENV
                 perl Makefile.PL
                 make test
             - name: Commit RangeMessage.xml
