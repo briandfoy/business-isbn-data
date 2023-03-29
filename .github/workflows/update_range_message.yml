@@ -59,6 +59,7 @@ jobs:
                 echo "CHANGES_PUSHED=1" >> $GITHUB_ENV
             - uses: JasonEtco/create-an-issue@v2
               id: create-issue
+              if: ${{ env.RANGE_MESSAGES_SAME == 0 }}
               env:
                 GITHUB_TOKEN: ${{ secrets.ISSUES_GITHUB_TOKEN }}
               with:
