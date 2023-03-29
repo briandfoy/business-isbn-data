@@ -24,7 +24,7 @@ Revision history for Perl module Business::ISBN::Data
 	* Try harder to figure out these test failures
 
 20210112.005 2021-02-13T05:23:58Z
-	* Fix the default data test. It should only run when you have 
+	* Fix the default data test. It should only run when you have
 	Business::ISBN already, and it shouldn't do stupid things like
 	using an array that I didn't put anything in.
 
