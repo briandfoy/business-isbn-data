@@ -70,3 +70,8 @@ jobs:
                 title: Data update for ${{env.NEW_VERSION}}
                 delete-branch: true
                 branch: $${{env.PR_BRANCH_NAME}}
+            - name: Create Pull Request
+              continue-on-error: true
+              if: ${{ env.RANGE_MESSAGES_SAME == 0 }}
+              run: |
+                git push origin :$${{env.PR_BRANCH_NAME}}
