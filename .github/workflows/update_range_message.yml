@@ -71,6 +71,7 @@ jobs:
                 delete-branch: true
                 branch: ${{env.PR_BRANCH_NAME}}
             - name: Create Pull Request
+                base: master
               continue-on-error: true
               if: ${{ env.RANGE_MESSAGES_SAME == 0 }}
               run: |
