@@ -19,6 +19,7 @@ jobs:
                 perl -0777 -ne 'm/^our \x24VERSION\s+=\s+\x27(.+?)\x27/m and print qq(OLD_VERSION=$1)' lib/Business/ISBN/Data.pm >> $GITHUB_ENV
             - name: setup packages
               run: |
+                sudo apt-get update
                 sudo apt -y install libxml2-utils
             - name: setup git config
               run: |
