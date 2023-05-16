@@ -64,10 +64,7 @@ jobs:
               uses: peter-evans/create-pull-request@v4
               with:
                 token: ${{ secrets.ISSUES_GITHUB_TOKEN }}
-                assignees: briandfoy
-                labels: "Type: data update"
                 title: Data update for ${{env.NEW_VERSION}}
-                delete-branch: true
                 branch: ${{env.PR_BRANCH_NAME}}
                 base: master
             - name: Clean up
