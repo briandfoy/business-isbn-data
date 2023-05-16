@@ -62,7 +62,7 @@ jobs:
                 echo "CHANGES_PUSHED=1" >> $GITHUB_ENV
             - name: Create Pull Request
               if: ${{ env.CHANGES_PUSHED == 1 }}
-              uses: peter-evans/create-pull-request@v4
+              uses: peter-evans/create-pull-request@v5
               with:
                 token: ${{ secrets.ISSUES_GITHUB_TOKEN }}
                 title: Data update for ${{env.NEW_VERSION}}
