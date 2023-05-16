@@ -25,6 +25,7 @@ jobs:
               run: |
                 git config --global user.name "GitHub Actions Bot"
                 git config --global user.email "<>"
+                git config credential.helper store
             - name: Fetch RangeMessage.xml
               id: fetch
               run: |
