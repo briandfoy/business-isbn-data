@@ -9,6 +9,7 @@ permissions:
 jobs:
     update-ranges:
         runs-on: ubuntu-latest
+        environment: basic
         env:
             RANGE_MESSAGES_SAME: 1
             CHANGES_PUSHED: 0
