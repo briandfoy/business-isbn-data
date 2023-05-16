@@ -9,6 +9,12 @@ permissions:
 jobs:
     update-ranges:
         runs-on: ubuntu-latest
+        # create a environment named with this key
+        # Repo > Settings > Environments
+        # Add a secret named ISSUES_GITHUB_TOKEN
+        # The secret value is a classic Github token with repo access
+        # Account > Settings > Developer Settings > Personal Access Tokens > Tokens (classic)
+        environment: action-pull-request
         env:
             RANGE_MESSAGES_SAME: 1
             CHANGES_PUSHED: 0
@@ -64,7 +70,10 @@ jobs:
               uses: peter-evans/create-pull-request@v4
               with:
                 token: ${{ secrets.ISSUES_GITHUB_TOKEN }}
+                assignees: briandfoy
+                labels: "Type: data update"
                 title: Data update for ${{env.NEW_VERSION}}
+                delete-branch: true
                 branch: ${{env.PR_BRANCH_NAME}}
                 base: master
             - name: Clean up
