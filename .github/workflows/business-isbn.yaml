@@ -40,9 +40,13 @@ jobs:
             - name: Install dependencies
               run: |
                 cpanm --notest .
+            - name: Setup environment
+              run: |
+                echo "PERL5LIB=blib/lib" >> $GITHUB_ENV
             - name: Install Business::ISBN
               run: |
                 perl Makefile.PL
                 make
-                env PERL5LIB=lib/blib cpanm --verbose --test-only Business::ISBN
+                perl -MBusiness::ISBN::Data -le 'print q(Business::ISBN::Data: ), Business::ISBN::Data->VERSION'
+                cpanm --verbose --test-only Business::ISBN
 
