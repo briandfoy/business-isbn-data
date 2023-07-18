@@ -44,5 +44,5 @@ jobs:
               run: |
                 perl Makefile.PL
                 make
-                env PERL5LIB=lib/blib cpanm Business::ISBN
+                env PERL5LIB=lib/blib cpanm --verbose --test-only Business::ISBN
 
