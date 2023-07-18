@@ -6,6 +6,7 @@ name: upstream
 on:
     push:
     workflow_dispatch:
+
 jobs:
     perl:
         runs-on: ${{ matrix.os }}
@@ -41,4 +42,7 @@ jobs:
                 cpanm --notest .
             - name: Install Business::ISBN
               run: |
-                cpanm Business::ISBN
+                perl Makefile.PL
+                make
+                env PERL5LIB=lib/blib cpanm Business::ISBN
+
