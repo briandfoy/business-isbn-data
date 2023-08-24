@@ -66,6 +66,7 @@ jobs:
                 git commit -m "RangeMessage.xml for ${{ env.NEW_VERSION }}" lib/Business/ISBN/RangeMessage.xml lib/Business/ISBN/Data.pm
                 echo "CHANGES_PUSHED=1" >> $GITHUB_ENV
             - name: Create Pull Request
+              id: pull-request
               if: ${{ env.CHANGES_PUSHED == 1 }}
               uses: peter-evans/create-pull-request@v4
               with:
@@ -76,6 +77,16 @@ jobs:
                 delete-branch: true
                 branch: ${{env.PR_BRANCH_NAME}}
                 base: master
+            - name: Merge the pull request
+              if: ${{ env.CHANGES_PUSHED == 1 }}
+              env:
+                GH_TOKEN: ${{ secrets.ISSUES_GITHUB_TOKEN }}
+              shell: bash
+              run: |
+                echo "Approving pull request <${{ steps.pull-request.outputs.pull-request-number }}>"
+                gh pr review --approve ${{ steps.pull-request.outputs.pull-request-number }}
+                echo "Merging pull request <${{ steps.pull-request.outputs.pull-request-number }}>"
+                gh pr merge ${{  steps.pull-request.outputs.pull-request-number }} --admin --squash
             - name: Clean up
               continue-on-error: true
               if: ${{ env.RANGE_MESSAGES_SAME == 0 }}
