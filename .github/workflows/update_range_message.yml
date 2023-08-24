@@ -86,7 +86,7 @@ jobs:
                 echo "Approving pull request <${{ steps.pull-request.outputs.pull-request-number }}>"
                 gh pr review --approve ${{ steps.pull-request.outputs.pull-request-number }}
                 echo "Merging pull request <${{ steps.pull-request.outputs.pull-request-number }}>"
-                gh pr merge ${{  steps.pull-request.outputs.pull-request-number }} --admin --squash
+                gh pr merge ${{ steps.pull-request.outputs.pull-request-number }} --admin --squash
             - name: Clean up
               continue-on-error: true
               if: ${{ env.RANGE_MESSAGES_SAME == 0 }}
