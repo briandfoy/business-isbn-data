@@ -17,8 +17,8 @@
 ]>
 <ISBNRangeMessage>
   <MessageSource>International ISBN Agency</MessageSource>
-  <MessageSerialNumber>a60412b6-6ebd-45aa-b20b-b9906ccec748</MessageSerialNumber>
-  <MessageDate>Tue, 22 Aug 2023 04:41:23 BST</MessageDate>
+  <MessageSerialNumber>108d81f4-3986-49d4-a120-356e1885ee56</MessageSerialNumber>
+  <MessageDate>Sat, 26 Aug 2023 04:41:11 BST</MessageDate>
   <EAN.UCCPrefixes>
     <EAN.UCC>
       <Prefix>978</Prefix>
@@ -4525,11 +4525,11 @@
       <Agency>Armenia</Agency>
       <Rules>
         <Rule>
-          <Range>0000000-4999999</Range>
+          <Range>0000000-3999999</Range>
           <Length>1</Length>
         </Rule>
         <Rule>
-          <Range>5000000-7999999</Range>
+          <Range>4000000-7999999</Range>
           <Length>2</Length>
         </Rule>
         <Rule>
