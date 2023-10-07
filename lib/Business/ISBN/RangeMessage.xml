@@ -17,8 +17,8 @@
 ]>
 <ISBNRangeMessage>
   <MessageSource>International ISBN Agency</MessageSource>
-  <MessageSerialNumber>6ad9eca0-a529-41ff-984f-ad323d255bba</MessageSerialNumber>
-  <MessageDate>Tue, 26 Sep 2023 04:41:08 BST</MessageDate>
+  <MessageSerialNumber>e669b357-6e32-405b-ae61-20c8f27172d4</MessageSerialNumber>
+  <MessageDate>Sat, 7 Oct 2023 04:41:21 BST</MessageDate>
   <EAN.UCCPrefixes>
     <EAN.UCC>
       <Prefix>978</Prefix>
@@ -3775,19 +3775,27 @@
       <Agency>Uzbekistan</Agency>
       <Rules>
         <Rule>
-          <Range>0000000-7299999</Range>
+          <Range>0000000-0099999</Range>
           <Length>0</Length>
         </Rule>
         <Rule>
-          <Range>7300000-7499999</Range>
+          <Range>0100000-0599999</Range>
+          <Length>2</Length>
+        </Rule>
+        <Rule>
+          <Range>0600000-7299999</Range>
+          <Length>0</Length>
+        </Rule>
+        <Rule>
+          <Range>7300000-7999999</Range>
           <Length>3</Length>
         </Rule>
         <Rule>
-          <Range>7500000-9649999</Range>
+          <Range>8000000-9399999</Range>
           <Length>0</Length>
         </Rule>
         <Rule>
-          <Range>9650000-9999999</Range>
+          <Range>9400000-9999999</Range>
           <Length>4</Length>
         </Rule>
       </Rules>
