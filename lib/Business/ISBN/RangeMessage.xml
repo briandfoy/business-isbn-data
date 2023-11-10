@@ -17,8 +17,8 @@
 ]>
 <ISBNRangeMessage>
   <MessageSource>International ISBN Agency</MessageSource>
-  <MessageSerialNumber>0b39dc7b-15d3-4c87-b7be-05f4a138cc67</MessageSerialNumber>
-  <MessageDate>Thu, 2 Nov 2023 03:41:12 GMT</MessageDate>
+  <MessageSerialNumber>7ea7a54f-4824-4449-9b82-45d43891cd8e</MessageSerialNumber>
+  <MessageDate>Fri, 10 Nov 2023 03:40:59 GMT</MessageDate>
   <EAN.UCCPrefixes>
     <EAN.UCC>
       <Prefix>978</Prefix>
@@ -846,7 +846,7 @@
     </Group>
     <Group>
       <Prefix>978-605</Prefix>
-      <Agency>Turkey</Agency>
+      <Agency>Türkiye</Agency>
       <Rules>
         <Rule>
           <Range>0000000-0299999</Range>
@@ -1356,7 +1356,7 @@
     </Group>
     <Group>
       <Prefix>978-625</Prefix>
-      <Agency>Turkey</Agency>
+      <Agency>Türkiye</Agency>
       <Rules>
         <Rule>
           <Range>0000000-0199999</Range>
@@ -3274,7 +3274,7 @@
     </Group>
     <Group>
       <Prefix>978-975</Prefix>
-      <Agency>Turkey</Agency>
+      <Agency>Türkiye</Agency>
       <Rules>
         <Rule>
           <Range>0000000-0199999</Range>
@@ -4700,7 +4700,7 @@
     </Group>
     <Group>
       <Prefix>978-9944</Prefix>
-      <Agency>Turkey</Agency>
+      <Agency>Türkiye</Agency>
       <Rules>
         <Rule>
           <Range>0000000-0999999</Range>
