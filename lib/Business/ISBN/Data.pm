@@ -7,7 +7,7 @@ use Carp                  qw(carp);
 use File::Basename        qw(dirname);
 use File::Spec::Functions qw(catfile);
 
-our $VERSION = '20231220.001';
+our $VERSION = '20240111.001';
 
 =encoding utf8
 
@@ -115,8 +115,8 @@ You may redistribute this under the terms of the Artistic License 2.0.
 sub _default_data {
 # BEGIN REPLACE
 	(
-	_data_date => 'Wed, 20 Dec 2023 03:40:58 GMT',
-	_serial    => '7748e45d-1ed9-4eaa-9e9f-b2825069de73',
+	_data_date => 'Thu, 11 Jan 2024 03:40:59 GMT',
+	_serial    => '8ac80ce2-bef0-4126-8d5c-99b23c949c6d',
 	_source    => __FILE__,
 	978 => {
 		0     => [ 'English language'             => [ '00', '19', '200', '227', '2280', '2289', '229', '368', '3690', '3699', '370', '638', '6390', '6397', '6398000', '6399999', '640', '644', '6450000', '6459999', '646', '647', '6480000', '6489999', '649', '654', '6550', '6559', '656', '699', '7000', '8499', '85000', '89999', '900000', '900370', '9003710', '9003719', '900372', '949999', '9500000', '9999999' ] ],
