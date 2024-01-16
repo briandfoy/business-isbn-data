@@ -37,3 +37,4 @@ MANIFEST*[123456789]
 *.icloud
 lib/Business/ISBN/Data.pm.tmp
 lib/Business/ISBN/RangeMessage.xml.new
+Business-ISBN-*
