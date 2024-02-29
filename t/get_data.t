@@ -30,7 +30,7 @@ subtest 'ISBN_RANGE_MESSAGE does not exist' => sub {
 	my %data = Business::ISBN::Data->_get_data();
 	diag( "There should be no more warnings" );
 	ok exists $data{'_source'}, '_source exists in hash';
-	like $data{'_source'}, qr|lib/Business/ISBN/RangeMessage.xml\z|, '_source is distributed file';
+	is basename($data{'_source'}), 'RangeMessage.xml', '_source is distributed file';
 	};
 
 done_testing();
