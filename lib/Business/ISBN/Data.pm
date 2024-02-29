@@ -480,16 +480,6 @@ $Business::ISBN::MAX_COUNTRY_CODE_LENGTH = length(
 package # Hide from PAUSE
 	Business::ISBN;
 
-sub isbn_group_code_string_from_number {
-	return if $_[0] =~ /\A_/;
-	return $Business::ISBN::country_data{ $_[0] }[0] || '';
-	}
-
-sub isbn_publisher_ranges_from_group_number {
-	return if $_[0] =~ /\A_/;
-	return $Business::ISBN::country_data{ $_[0] }[1] || [];
-	}
-
 sub isbn_data_source {
 	return $Business::ISBN::country_data{ '_source' } || __FILE__
 	}
