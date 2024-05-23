@@ -68,7 +68,7 @@ jobs:
             - name: Create Pull Request
               id: pull-request
               if: ${{ env.CHANGES_PUSHED == 1 }}
-              uses: peter-evans/create-pull-request@v4
+              uses: peter-evans/create-pull-request@v6
               with:
                 token: ${{ secrets.ISSUES_GITHUB_TOKEN }}
                 assignees: briandfoy
