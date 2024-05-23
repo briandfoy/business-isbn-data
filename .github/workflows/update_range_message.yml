@@ -35,6 +35,7 @@ jobs:
               id: fetch
               run: |
                 curl https://www.isbn-international.org/export_rangemessage.xml > lib/Business/ISBN/RangeMessage.xml.new
+                ls -l
             - name: Check new RangeMessage.xml
               id: check
               run: |
