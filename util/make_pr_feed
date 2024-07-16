@@ -16,7 +16,6 @@ my $url = sprintf 'https://api.github.com/repos/%s/%s/pulls',
 
 my $headers = {
 	Accept                 => 'application/vnd.github+json',
-	Authorization          => $ENV{GITHUB_TOKEN},
 	'X-GitHub-Api-Version' => '2022-11-28',
 	};
 
