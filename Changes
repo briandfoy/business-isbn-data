@@ -1,5 +1,8 @@
 Revision history for Perl module Business::ISBN::Data
 
+20240718.001 2024-07-18T17:14:53Z
+	* data update for 2024-07-18
+
 20240716.001 2024-07-16T15:45:27Z
 	* Data update for 2024-07-16
 	* this distribution now uses GitHub Attestions. See README.pod.
