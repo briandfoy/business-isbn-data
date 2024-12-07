@@ -17,8 +17,8 @@
 ]>
 <ISBNRangeMessage>
   <MessageSource>International ISBN Agency</MessageSource>
-  <MessageSerialNumber>449e659e-c99e-41d0-aa46-6cce34e3fb98</MessageSerialNumber>
-  <MessageDate>Thu, 5 Dec 2024 03:46:56 GMT</MessageDate>
+  <MessageSerialNumber>98491ced-b17b-4e09-8508-e1352536da03</MessageSerialNumber>
+  <MessageDate>Sat, 7 Dec 2024 03:46:20 GMT</MessageDate>
   <EAN.UCCPrefixes>
     <EAN.UCC>
       <Prefix>978</Prefix>
@@ -6067,11 +6067,11 @@
       <Agency>Algeria</Agency>
       <Rules>
         <Rule>
-          <Range>0000000-0699999</Range>
+          <Range>0000000-1299999</Range>
           <Length>2</Length>
         </Rule>
         <Rule>
-          <Range>0700000-4999999</Range>
+          <Range>1300000-4999999</Range>
           <Length>0</Length>
         </Rule>
         <Rule>
