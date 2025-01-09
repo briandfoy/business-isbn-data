@@ -107,7 +107,7 @@ use Business::ISBN 3.005 or later because the data structure changed.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright © 2002-2024, brian d foy <briandfoy@pobox.com>. All rights reserved.
+Copyright © 2002-2025, brian d foy <briandfoy@pobox.com>. All rights reserved.
 
 You may redistribute this under the terms of the Artistic License 2.0.
 
