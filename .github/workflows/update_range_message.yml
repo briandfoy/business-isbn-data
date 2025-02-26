@@ -19,6 +19,7 @@ jobs:
         env:
             RANGE_MESSAGES_SAME: 1
             CHANGES_PUSHED: 0
+            GH_TOKEN: ${{ github.token }}
         steps:
             - uses: actions/checkout@v3
             - name: old version
