@@ -17,8 +17,8 @@
 ]>
 <ISBNRangeMessage>
   <MessageSource>International ISBN Agency</MessageSource>
-  <MessageSerialNumber>dfed83c2-e6a6-42aa-bfe3-ca79182c1f34</MessageSerialNumber>
-  <MessageDate>Thu, 5 Jun 2025 04:53:44 BST</MessageDate>
+  <MessageSerialNumber>62e46545-a534-42af-b29d-015ba611012e</MessageSerialNumber>
+  <MessageDate>Fri, 6 Jun 2025 04:53:10 BST</MessageDate>
   <EAN.UCCPrefixes>
     <EAN.UCC>
       <Prefix>978</Prefix>
@@ -4635,11 +4635,11 @@
       <Agency>Kenya</Agency>
       <Rules>
         <Rule>
-          <Range>0000000-3499999</Range>
+          <Range>0000000-3299999</Range>
           <Length>0</Length>
         </Rule>
         <Rule>
-          <Range>3500000-5599999</Range>
+          <Range>3300000-5599999</Range>
           <Length>2</Length>
         </Rule>
         <Rule>
