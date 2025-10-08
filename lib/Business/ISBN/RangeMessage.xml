@@ -17,8 +17,8 @@
 ]>
 <ISBNRangeMessage>
   <MessageSource>International ISBN Agency</MessageSource>
-  <MessageSerialNumber>93cc99b6-acd4-4246-a898-b1a1dd4d1e9b</MessageSerialNumber>
-  <MessageDate>Fri, 3 Oct 2025 04:45:49 BST</MessageDate>
+  <MessageSerialNumber>38cc9fe6-9ee9-4915-bf64-30b90114ef49</MessageSerialNumber>
+  <MessageDate>Wed, 8 Oct 2025 04:47:00 BST</MessageDate>
   <EAN.UCCPrefixes>
     <EAN.UCC>
       <Prefix>978</Prefix>
@@ -8345,23 +8345,23 @@
       <Agency>Benin</Agency>
       <Rules>
         <Rule>
-          <Range>0000000-2999999</Range>
+          <Range>0000000-3999999</Range>
           <Length>1</Length>
         </Rule>
         <Rule>
-          <Range>3000000-4999999</Range>
+          <Range>4000000-4999999</Range>
           <Length>0</Length>
         </Rule>
         <Rule>
-          <Range>5000000-7199999</Range>
+          <Range>5000000-7699999</Range>
           <Length>2</Length>
         </Rule>
         <Rule>
-          <Range>7200000-8849999</Range>
+          <Range>7700000-8649999</Range>
           <Length>0</Length>
         </Rule>
         <Rule>
-          <Range>8850000-9999999</Range>
+          <Range>8650000-9999999</Range>
           <Length>3</Length>
         </Rule>
       </Rules>
