@@ -17,8 +17,8 @@
 ]>
 <ISBNRangeMessage>
   <MessageSource>International ISBN Agency</MessageSource>
-  <MessageSerialNumber>38cc9fe6-9ee9-4915-bf64-30b90114ef49</MessageSerialNumber>
-  <MessageDate>Wed, 8 Oct 2025 04:47:00 BST</MessageDate>
+  <MessageSerialNumber>c227a374-ef47-4801-b0a5-efa2c197bf18</MessageSerialNumber>
+  <MessageDate>Thu, 9 Oct 2025 04:45:30 BST</MessageDate>
   <EAN.UCCPrefixes>
     <EAN.UCC>
       <Prefix>978</Prefix>
@@ -8623,11 +8623,11 @@
       <Agency>Mauritius</Agency>
       <Rules>
         <Rule>
-          <Range>0000000-2999999</Range>
+          <Range>0000000-3999999</Range>
           <Length>1</Length>
         </Rule>
         <Rule>
-          <Range>3000000-4999999</Range>
+          <Range>4000000-4999999</Range>
           <Length>0</Length>
         </Rule>
         <Rule>
