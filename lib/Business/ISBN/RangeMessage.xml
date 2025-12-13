@@ -17,8 +17,8 @@
 ]>
 <ISBNRangeMessage>
   <MessageSource>International ISBN Agency</MessageSource>
-  <MessageSerialNumber>19634c04-0ff7-485a-bccd-c3469bae2e34</MessageSerialNumber>
-  <MessageDate>Fri, 12 Dec 2025 04:06:51 GMT</MessageDate>
+  <MessageSerialNumber>02914252-8032-4829-9ab8-72b6a2483c36</MessageSerialNumber>
+  <MessageDate>Sat, 13 Dec 2025 03:53:38 GMT</MessageDate>
   <EAN.UCCPrefixes>
     <EAN.UCC>
       <Prefix>978</Prefix>
@@ -4427,8 +4427,12 @@
       <Agency>Portugal</Agency>
       <Rules>
         <Rule>
-          <Range>0000000-1999999</Range>
+          <Range>0000000-0999999</Range>
           <Length>1</Length>
+        </Rule>
+        <Rule>
+          <Range>1000000-1999999</Range>
+          <Length>0</Length>
         </Rule>
         <Rule>
           <Range>2000000-3499999</Range>
