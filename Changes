@@ -479,7 +479,7 @@ Revision history for Perl module Business::ISBN::Data
 
 20210112.001 2021-01-19T14:48:12Z
 	* freshen distro, dump Travis CI, add Github Actions
-	* Update to latest Business::ISBN::Data
+	* Update to the latest Business::ISBN::Data
 
 20191107 2019-12-11T20:04:42Z
 	* Peter Williams fixed the 978/979 distinction (GitHub #5)
@@ -512,17 +512,17 @@ Revision history for Perl module Business::ISBN::Data
 20081020 - 2008-10-20
 	* Updated publisher codes thanks to Yakov Shafranovich
 	* Version number is now the update date of the module,
-	in YYYYMMDD. This not the date of the ISBN Agency
+	in YYYYMMDD. This is not the date of the ISBN Agency
 	updates though.
 
 1.17 - 2007-10-27
-	* Update to docs to point to latest URL for ISBN International
+	* Update to docs to point to the latest URL for ISBN International
 
 1.16 - 2007-10-25
 	* distro cleanups. No need to upgrade.:wq
 
 1.15 - 2007-08-31
-	[BUGFIX] RT #29078: Fix publihser ranges for Greece
+	[BUGFIX] RT #29078: Fix publisher ranges for Greece
 
 1.14 - 2007-05-18
 	* *Added 7000-8499 range from Greece (960) to fix RT #27107
@@ -572,7 +572,7 @@ Revision history for Perl module Business::ISBN::Data
 	* Updated publisher ranges
 
 1.03 - 2002-11-25
-	* fixed Makefile to install in right place
+	* fixed Makefile to install in the right place
 
 1.02 - 2002-11-25
 	* this is the first release as a separate module
