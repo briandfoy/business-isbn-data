@@ -26,9 +26,10 @@ subtest 'ISBN_RANGE_MESSAGE does not exist' => sub {
 	ok ! -e $file, "$file does not exist";
 	local $ENV{ISBN_RANGE_MESSAGE} = $file;
 
-	diag( "This will be a warning here" );
+	my $warning;
+	local $SIG{'__WARN__'} = sub { $warning .= $_[0] };
 	my %data = Business::ISBN::Data->_get_data();
-	diag( "There should be no more warnings" );
+	like $warning, qr/does not exist/, 'warning message notes the file is not there';
 	ok exists $data{'_source'}, '_source exists in hash';
 	is basename($data{'_source'}), 'RangeMessage.xml', '_source is distributed file';
 	};
