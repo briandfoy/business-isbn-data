@@ -423,7 +423,7 @@ sub _get_data {
 	my $file = 'RangeMessage.xml';
 	no warnings 'uninitialized';
 	my @candidates = grep { -e } (
-		(exists $ENV{ISBN_RANGE_MESSAGE} ?  $ENV{ISBN_RANGE_MESSAGE} : () ),
+		(exists $ENV{ISBN_RANGE_MESSAGE} ?  $ENV{ISBN_RANGE_MESSAGE} : ()),
 		catfile( dirname( __FILE__ ), $file ), # next to the module
 		$file,                                 # current directory
 		);
