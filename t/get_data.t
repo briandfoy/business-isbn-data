@@ -11,20 +11,30 @@ my @subs = qw(
 
 can_ok $class, @subs;
 
-subtest 'ISBN_RANGE_MESSAGE exists' => sub {
+my $KEY = 'ISBN_RANGE_MESSAGE';
+
+# https://github.com/briandfoy/business-isbn-data/issues/236
+subtest 'ISBN_RANGE_MESSAGE env var does not exist before or after' => sub {
+	delete local $ENV{$KEY};
+	ok ! exists $ENV{$KEY}, "env var key <$KEY> does not exist (before)";
+	my %data = Business::ISBN::Data->_get_data();
+	ok ! exists $ENV{$KEY}, "env var key <$KEY> does not exist (after)";
+	};
+
+subtest 'ISBN_RANGE_MESSAGE file exists' => sub {
 	my $file = 'lib/Business/ISBN/RangeMessage.xml';
 	ok -e $file, "$file exists";
-	local $ENV{ISBN_RANGE_MESSAGE} = $file;
+	local $ENV{$KEY} = $file;
 
 	my %data = Business::ISBN::Data->_get_data();
 	ok exists $data{'_source'}, '_source exists in hash';
 	is $data{'_source'}, $file, '_source is the file';
 	};
 
-subtest 'ISBN_RANGE_MESSAGE does not exist' => sub {
+subtest 'ISBN_RANGE_MESSAGE file does not exist' => sub {
 	my $file = 'lib/Business/ISBN/RangeMessage.yaml';
 	ok ! -e $file, "$file does not exist";
-	local $ENV{ISBN_RANGE_MESSAGE} = $file;
+	local $ENV{$KEY} = $file;
 
 	my $warning;
 	local $SIG{'__WARN__'} = sub { $warning .= $_[0] };
