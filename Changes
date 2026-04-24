@@ -1,5 +1,8 @@
 Revision history for Perl module Business::ISBN::Data
 
+20260424.001 2026-04-24T14:49:48Z
+	* data update for 2026-04-24
+
 20260416.001 2026-04-16T14:26:58Z
 	* stop unintended autovivification of ISBN_RANGE_MESSAGE (#236)
 
