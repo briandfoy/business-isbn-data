@@ -21,7 +21,7 @@ jobs:
             CHANGES_PUSHED: 0
             GH_TOKEN: ${{ github.token }}
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v7
             - name: old version
               run: |
                 perl -0777 -ne 'm/^our \x24VERSION\s+=\s+\x27(.+?)\x27/m and print qq(OLD_VERSION=$1)' lib/Business/ISBN/Data.pm >> $GITHUB_ENV
