@@ -38,3 +38,4 @@ MANIFEST*[123456789]
 lib/Business/ISBN/Data.pm.tmp
 lib/Business/ISBN/RangeMessage.xml.new
 Business-ISBN-*
+.claude/
