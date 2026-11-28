@@ -17,8 +17,8 @@
 ]>
 <ISBNRangeMessage>
   <MessageSource>International ISBN Agency</MessageSource>
-  <MessageSerialNumber>221b33dd-1997-4aa6-84e1-a267b3145d95</MessageSerialNumber>
-  <MessageDate>Thu, 26 Nov 2026 13:05:11 UTC</MessageDate>
+  <MessageSerialNumber>cd70b1f2-9a2f-4116-a0da-3b0c47ef18fa</MessageSerialNumber>
+  <MessageDate>Sat, 28 Nov 2026 12:17:07 UTC</MessageDate>
   <EAN.UCCPrefixes>
     <EAN.UCC>
       <Prefix>978</Prefix>
@@ -2027,8 +2027,12 @@
       <Agency>India</Agency>
       <Rules>
         <Rule>
-          <Range>0000000-1599999</Range>
+          <Range>0000000-1499999</Range>
           <Length>2</Length>
+        </Rule>
+        <Rule>
+          <Range>1500000-1599999</Range>
+          <Length>5</Length>
         </Rule>
         <Rule>
           <Range>1600000-1699999</Range>
@@ -2047,8 +2051,12 @@
           <Length>5</Length>
         </Rule>
         <Rule>
-          <Range>2000000-6249999</Range>
+          <Range>2000000-5999999</Range>
           <Length>3</Length>
+        </Rule>
+        <Rule>
+          <Range>6000000-6249999</Range>
+          <Length>4</Length>
         </Rule>
         <Rule>
           <Range>6250000-6469999</Range>
@@ -4865,12 +4873,8 @@
           <Length>0</Length>
         </Rule>
         <Rule>
-          <Range>2250000-3749999</Range>
+          <Range>2250000-4499999</Range>
           <Length>3</Length>
-        </Rule>
-        <Rule>
-          <Range>3750000-4499999</Range>
-          <Length>0</Length>
         </Rule>
         <Rule>
           <Range>4500000-5499999</Range>
